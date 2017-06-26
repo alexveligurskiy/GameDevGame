@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstantLeft : MonoBehaviour {
+public class Instants : MonoBehaviour {
 	public GameObject LeftLattice;
 	public GameObject RightLattice;
 	public GameObject Hammer1;

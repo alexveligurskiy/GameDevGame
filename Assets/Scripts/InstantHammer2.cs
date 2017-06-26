@@ -14,7 +14,7 @@ public class InstantHammer2 : MonoBehaviour {
 	void Start(){
 
 		InvokeRepeating("Generate", 2.0f, 1.0f);
-		InvokeRepeating("Destroy", 2.0f, 1.0f);
+		//InvokeRepeating("Destroy", 2.0f, 1.0f);
 	}
 
 	void Generate(){

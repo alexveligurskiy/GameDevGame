@@ -13,11 +13,12 @@ public class InstantHammer1 : MonoBehaviour {
 	void Start(){
 
 		InvokeRepeating("Generate", 2.0f, 1.0f);
-		InvokeRepeating("Destroy", 2.0f, 1.0f);
+		//InvokeRepeating("Destroy", 2.0f, 1.0f);
 	}
 
 	void Generate(){
 		YPosL += 8f;
 		GameObject.Instantiate (Hammer1, new Vector3 (XPosL, YPosL, -1), Quaternion.identity);
 	}
+		
 }

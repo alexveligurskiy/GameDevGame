@@ -13,7 +13,7 @@ public class InstantRight : MonoBehaviour {
 	void Start(){
 
 		InvokeRepeating("Generate", 2.0f, 1.5f);
-		InvokeRepeating("Destroy", 2.0f, 1.5f);
+		//InvokeRepeating("Destroy", 2.0f, 1.5f);
 	}
 
 	void Generate(){

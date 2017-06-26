@@ -18,6 +18,7 @@ public class InstantLeft : MonoBehaviour {
 
 	void Generate(){
 		YPosL += 8f;
+
 		GameObject.Instantiate (LeftLattice, new Vector3 (XPosL, YPosL, -1), Quaternion.identity);
 	}
 

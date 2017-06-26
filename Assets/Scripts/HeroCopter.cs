@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroCopter : MonoBehaviour {
+	public static HeroCopter current;
 	public float speed = 5;
 	int value = 0;
 	Rigidbody2D myBody = null;
 
 	void Awake()
 	{
-		
+		current = this;
+	}
+	Vector3 startingPosition;
+
+
+	public void setStartPosition(Vector3 pos) {
+		this.startingPosition = pos;
 	}
 	// Use this for initialization
 	void Start () {
 		myBody = this.GetComponent<Rigidbody2D> ();
-		LevelController.current.setStartPosition (transform.position);
+		current.setStartPosition (transform.position);
 		GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
 	}
 		

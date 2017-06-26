@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8e891ec2587194996a997a0469fd49be
+timeCreated: 1498492879
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Window: {fileID: 1940689490471348, guid: 719e14035151548e6b8fa67ea2ee3ce0, type: 2}
+  - HomeButton: {instanceID: 0}
+  - MusicButton: {instanceID: 0}
+  - CloseButton: {instanceID: 0}
+  - Background: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

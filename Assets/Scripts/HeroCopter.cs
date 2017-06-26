@@ -24,7 +24,7 @@ public class HeroCopter : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		//count = 0;
+		count = 0;
 		SetCountText ();
 
 

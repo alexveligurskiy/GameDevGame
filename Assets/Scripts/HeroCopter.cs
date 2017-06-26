@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class HeroCopter : MonoBehaviour {
 	public static HeroCopter current;
 	public float speed = 5;
 	int value = 0;
+
+	public UILabel CountScore;
+
+	int count;
 	Rigidbody2D myBody = null;
 
 	void Awake()
@@ -20,6 +24,11 @@ public class HeroCopter : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		//count = 0;
+		SetCountText ();
+
+
+
 		myBody = this.GetComponent<Rigidbody2D> ();
 		current.setStartPosition (transform.position);
 		GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
@@ -61,4 +70,16 @@ public class HeroCopter : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D(Collider2D collider) {
+
+		if (collider.gameObject.CompareTag ("Coin")){
+			collider.gameObject.SetActive (false);
+			count = count + 1;
+			SetCountText ();
+		}
+	}
+	public void SetCountText (){
+		CountScore.text = count.ToString ();
+
+	}
 }

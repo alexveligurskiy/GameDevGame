@@ -11,6 +11,18 @@ public class StartGame : MonoBehaviour {
 		PlayButton.signalOnClick.AddListener (this.onPlay);
 		PauseButton.signalOnClick.AddListener(this.onPause);
 	}
+	void Update () {
+		if (Input.GetKeyDown ("space")) {
+			print ("space key was pressed");
+			Time.timeScale = 1;
+			GameObject obj = GameObject.Find("UI Root").AddChild(this.Window);
+
+			obj.transform.position = this.transform.position;
+			obj.transform.position += new Vector3(-9.0f, -4.0f, 0.0f);
+
+			PauseWindow Window = obj.GetComponent<PauseWindow>();
+		}
+	}
 	void onPlay() {
 		//Do something
 		SceneManager.LoadScene("GameScene");
@@ -22,7 +34,7 @@ public class StartGame : MonoBehaviour {
 		GameObject obj = GameObject.Find("UI Root").AddChild(this.Window);
 
 		obj.transform.position = this.transform.position;
-		obj.transform.position += new Vector3(-1.0f, -4.0f, 0.0f);
+		obj.transform.position += new Vector3(-9.0f, -4.0f, 0.0f);
 
 		PauseWindow Window = obj.GetComponent<PauseWindow>();
 

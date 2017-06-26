@@ -8,8 +8,7 @@ public class HelicopterMove : MonoBehaviour {
 	public float speed = 1.0f;
 	public Vector3 moveBy = Vector3.one;
 
-	public enum Mode
-	{
+	public enum Mode{
 		GoToA,
 		GoToB,
 		Attack,
@@ -22,26 +21,22 @@ public class HelicopterMove : MonoBehaviour {
 	Vector3 pointB;
 	public Mode currentMode = Mode.GoToB;
 
-	void Start()
-	{
+	void Start(){
 		this.myBody = this.GetComponent<Rigidbody2D>();
 		this.pointA = this.transform.position;
-
 		moveBy.y = 0;
 		moveBy.z = 0;
 		this.pointB = pointA + moveBy;
 
 	}
-	void FixedUpdate()
-	{
+	void FixedUpdate(){
 		setMode();
 
 		run();
 
 	}
 
-	private void setMode()
-	{
+	private void setMode(){
 		
 		Vector3 my_pos = this.transform.position;
 
@@ -65,25 +60,21 @@ public class HelicopterMove : MonoBehaviour {
 
 
 
-	private void run()
-	{
+	private void run(){
 
 		//[-1, 1]
 		float value = this.getDirection();
 		SpriteRenderer sr = GetComponent<SpriteRenderer>();
-		Animator animator = GetComponent<Animator>();
 
-		if (value < 0)
-		{
+
+		if (value < 0){
 			sr.flipX = false;
 
 		}
-		else if (value > 0)
-		{
+		else if (value > 0){
 			sr.flipX = true;
 		}
-		if (Mathf.Abs(value) > 0)
-		{
+		if (Mathf.Abs(value) > 0){
 			Vector2 vel = myBody.velocity;
 			vel.x = value * speed;
 			myBody.velocity = vel;
@@ -93,8 +84,7 @@ public class HelicopterMove : MonoBehaviour {
 	}
 
 
-	private float getDirection()
-	{
+	private float getDirection(){
 		
 		Vector3 my_pos = this.transform.position;
 
@@ -113,11 +103,9 @@ public class HelicopterMove : MonoBehaviour {
 
 
 
-	private bool isArrived(Vector3 pos, Vector3 target)
-	{
+	private bool isArrived(Vector3 pos, Vector3 target){
 		pos.z = 0;
 		target.z = 0;
 		return Vector3.Distance(pos, target) < 0.2f;
 	}
-
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoseWindow : MonoBehaviour {
-
+	
 	public GameObject Window;
 	public MyButton HomeButton;
 	public MyButton RestartButton;

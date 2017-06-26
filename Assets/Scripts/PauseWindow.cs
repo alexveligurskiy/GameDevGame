@@ -18,6 +18,7 @@ public class PauseWindow : MonoBehaviour {
 
 
 	}
+
 	void onPlay() {
 		//Do something
 		SceneManager.LoadScene("StartScene");
